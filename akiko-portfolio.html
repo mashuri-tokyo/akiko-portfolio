@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akiko Yoshida</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0d;
+    --surface: #161614;
+    --border: #2a2a26;
+    --text: #e8e4dc;
+    --muted: #7a7870;
+    --accent: #c8b87a;
+    --accent-dim: rgba(200,184,122,0.12);
+    --green: #7a9e7e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Subtle grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(200,184,122,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,184,122,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.1s forwards;
+  }
+
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 80px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--green);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-bio {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #b0ac9f;
+    max-width: 580px;
+    margin-bottom: 48px;
+  }
+
+  .hero-bio strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  section:nth-child(2) { animation-delay: 0.3s; }
+  section:nth-child(3) { animation-delay: 0.4s; }
+  section:nth-child(4) { animation-delay: 0.5s; }
+  section:nth-child(5) { animation-delay: 0.6s; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section-num {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-family: 'Instrument Sans', sans-serif;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 28px 24px;
+    transition: background 0.2s;
+  }
+
+  .stat:hover { background: #1c1c19; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .stat-desc {
+    font-size: 13px;
+    color: #7a7870;
+    line-height: 1.5;
+  }
+
+  /* EXPERIENCE */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-start: start;
+    transition: all 0.2s;
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-item:hover .exp-title { color: var(--accent); }
+
+  .exp-org {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .exp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .exp-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  .exp-period {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  /* PROJECTS */
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    background: #181816;
+    transform: translateY(-2px);
+  }
+
+  .project-icon {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .project-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .project-award {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* FOCUS */
+  .focus-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #9a9690;
+    margin-bottom: 32px;
+  }
+
+  .focus-text strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .focus-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .focus-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .focus-item:hover { color: var(--text); }
+
+  .focus-item::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* CONTACT */
+  .contact-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 48px;
+    max-width: 500px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-link {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 14px;
+    transition: all 0.2s;
+    group: true;
+  }
+
+  .contact-link:hover {
+    color: var(--text);
+    padding-left: 8px;
+  }
+
+  .contact-link:hover .link-arrow { color: var(--accent); }
+
+  .link-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+
+  .link-arrow {
+    font-size: 18px;
+    color: var(--border);
+    transition: color 0.2s;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.8s forwards;
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .footer-lang {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .container { padding: 0 20px; }
+    .stats { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-period { display: none; }
+    nav { flex-direction: column; gap: 16px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <div class="nav-name">Akiko Yoshida</div>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Genomics · Strategy · Bilingual</div>
+    <h1>Science meets<br><em>business strategy.</em></h1>
+    <p class="hero-bio">
+      I'm Akiko — a bilingual researcher and startup advisor based in Tokyo. I help <strong>deep tech founders, life science companies, and investors</strong> turn complex science into clear strategy. My work lives at the intersection of genomics research, market intelligence, and global communication.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Genomics</span>
+      <span class="tag">Market Research</span>
+      <span class="tag">Startup Strategy</span>
+      <span class="tag">Scientific Writing</span>
+      <span class="tag">EN · JP Bilingual</span>
+      <span class="tag">Deep Tech</span>
+      <span class="tag">Life Sciences</span>
+    </div>
+  </div>
+
+  <!-- TRACK RECORD -->
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Track Record</h2>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">1M+</div>
+        <div class="stat-label">Users Reached</div>
+        <div class="stat-desc">Scaled Genomelink from 10K to 1M+ through research-driven product strategy</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Studies Curated</div>
+        <div class="stat-desc">Built one of the world's largest consumer DNA databases — key to YC selection</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">14+</div>
+        <div class="stat-label">Years in Genomics</div>
+        <div class="stat-desc">From academic research at The University of Tokyo to YC-backed startup</div>
+      </div>
+    </div>
+
+    <div class="exp-list">
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Genomelink · Y Combinator Backed</div>
+          <div class="exp-title">Lead Researcher & DB Developer</div>
+          <div class="exp-desc">Built and scaled the company's core scientific database. Co-led Weekly Traits (10× engagement), YourRoots, and Ancient Bloodlines — translating complex genomics into consumer storytelling.</div>
+        </div>
+        <div class="exp-period">2018 – 2025</div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Beyond Next Ventures · BRAVE Global</div>
+          <div class="exp-title">Mentor — Deep Tech Founders</div>
+          <div class="exp-desc">Mentored PhD founders from University of Wisconsin and Max Planck Institute. Audience Award winner at BRAVE Global Demo Day.</div>
+        </div>
+        <div class="exp-period">2024 – 2025</div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">NTT Urban Development · Science Tokyo</div>
+          <div class="exp-title">Mentor — Tamachi Mirai Juku</div>
+          <div class="exp-desc">Mentored the highest-scoring team in the final presentation category across all participating teams.</div>
+        </div>
+        <div class="exp-period">2025 – 2026</div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Alchemist Accelerator · US</div>
+          <div class="exp-title">Mentor Network Member</div>
+          <div class="exp-desc">Supporting deep tech, AI, and healthcare founders. Eligible to provide founder nominations.</div>
+        </div>
+        <div class="exp-period">2025 – Present</div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">SPEEDA · Expert Network</div>
+          <div class="exp-title">Expert Writer — Bioinformatics</div>
+          <div class="exp-desc">Commissioned expert articles on bioinformatics and bio-materials. Recognized with Flash Opinion "Best Opinion" Award.</div>
+        </div>
+        <div class="exp-period">2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Selected Projects</h2>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-icon">🧬</div>
+        <div class="project-title">YourRoots — DNA Ancestry Product</div>
+        <div class="project-desc">Pre-launch market research, competitor analysis, and community insight. Helped shape the product direction for Genomelink's ancestry feature.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <div class="project-title">Weekly Traits — Content Series</div>
+        <div class="project-desc">Planned and curated DNA-based trait content (Caffeine, Stress, Sleep) in EN/JP. Achieved 10× increase in user engagement.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🔍</div>
+        <div class="project-title">Life Sciences SEO — Japanese Market</div>
+        <div class="project-desc">Keyword research and search intent analysis for life sciences web pages. Adapted strategy to Japanese search behavior and scientific terminology.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">✍️</div>
+        <div class="project-title">Expert Writing — Bio-Materials</div>
+        <div class="project-desc">Analyzed intersection of biotech innovation and market opportunities for SPEEDA.
+          <span class="project-award">🏆 Best Opinion Award</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT FOCUS -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Current Focus</h2>
+    </div>
+    <p class="focus-text">
+      I'm building a <strong>genomics intelligence platform</strong> — translating scientific and market developments into structured, actionable insights for founders, investors, and life science decision-makers.
+    </p>
+    <div class="focus-items">
+      <div class="focus-item">Search intent analysis in complex scientific areas (gene therapies, biologics)</div>
+      <div class="focus-item">SEO and keyword strategy aligned with commercial vs informational intent</div>
+      <div class="focus-item">Bridging scientific accuracy with market relevance for the Japanese market</div>
+      <div class="focus-item">Strategic advisory for deep tech startups entering Japan</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Services & Pricing</h2>
+    </div>
+    <div id="rate-status" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Loading live exchange rate...</div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Monthly Retainer</div>
+          <div class="exp-title">Strategic Advisory</div>
+          <div class="exp-desc">Market positioning, competitive landscape, go-to-market strategy, and partnership advisory. Ideal for deep tech and life science startups.</div>
+        </div>
+        <div class="exp-period">
+          <div>¥150,000 – ¥300,000 / month</div>
+          <div class="usd-price" data-min="150000" data-max="300000" data-unit="month"></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Per Project</div>
+          <div class="exp-title">Genomics & Life Science Research Report</div>
+          <div class="exp-desc">Bespoke research reports synthesizing academic literature, competitive signals, and market trends — structured for decision-makers, delivered in EN or JP.</div>
+        </div>
+        <div class="exp-period">
+          <div>¥100,000 – ¥200,000 / report</div>
+          <div class="usd-price" data-min="100000" data-max="200000" data-unit="report"></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Monthly Package</div>
+          <div class="exp-title">Scientific Content & SEO</div>
+          <div class="exp-desc">Evidence-based content for life science brands — articles, white papers, and SEO keyword strategy for English and Japanese audiences.</div>
+        </div>
+        <div class="exp-period">
+          <div>¥50,000 – ¥100,000 / month</div>
+          <div class="usd-price" data-min="50000" data-max="100000" data-unit="month"></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Per Session</div>
+          <div class="exp-title">Founder Mentoring & Genomics Consulting</div>
+          <div class="exp-desc">One-on-one sessions for PhD founders, deep tech entrepreneurs, or genomics-related strategic questions. Commercialization, pitch prep, and global communication.</div>
+        </div>
+        <div class="exp-period">
+          <div>¥25,000 – ¥50,000 / session</div>
+          <div class="usd-price" data-min="25000" data-max="50000" data-unit="session"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function loadExchangeRate() {
+      const status = document.getElementById('rate-status');
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/JPY');
+        const data = await res.json();
+        const rate = data.rates.USD;
+
+        document.querySelectorAll('.usd-price').forEach(el => {
+          const min = parseInt(el.dataset.min);
+          const max = parseInt(el.dataset.max);
+          const unit = el.dataset.unit;
+          const usdMin = Math.round(min * rate / 100) * 100;
+          const usdMax = Math.round(max * rate / 100) * 100;
+          el.textContent = `$${usdMin.toLocaleString()} – $${usdMax.toLocaleString()} USD / ${unit}`;
+          el.style.cssText = 'margin-top:6px; font-size:13px; color:var(--green); letter-spacing:0.01em;';
+        });
+
+        const jpy1usd = Math.round(1 / rate);
+        status.textContent = `Live rate: 1 USD = ¥${jpy1usd} · Updated ${new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})}`;
+        status.style.color = 'var(--green)';
+      } catch (e) {
+        status.textContent = 'Exchange rate unavailable · JPY prices apply';
+        document.querySelectorAll('.usd-price').forEach(el => el.remove());
+      }
+    }
+    loadExchangeRate();
+  </script>
+
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom: none;">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Let's Talk</h2>
+    </div>
+    <p class="contact-intro">Have a project in mind? I'd love to hear about it.</p>
+    <div class="contact-links">
+      <a href="mailto:syuririnma@gmail.com" class="contact-link">
+        <div>
+          <div class="link-label">Email</div>
+          syuririnma@gmail.com
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a href="https://www.linkedin.com/in/akikoyoshidaaaaaa/" target="_blank" class="contact-link">
+        <div>
+          <div class="link-label">LinkedIn</div>
+          Akiko Yoshida
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a href="https://www.upwork.com/freelancers/~014bf389c4048fb190?mp_source=share" target="_blank" class="contact-link">
+        <div>
+          <div class="link-label">Upwork</div>
+          Freelance Profile
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Akiko Yoshida</div>
+    <div class="footer-lang">Tokyo · English · 日本語</div>
+  </footer>
+
+</div>
+</body>
+</html>
