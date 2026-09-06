@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Abundance to Architecture: Three Companies Mapping Biology Across Scales</title>
+  <meta name="description" content="A look at how Bioptimus, Pixelgen Technologies, and Quanterix add spatial context and biological relationships to measurements of molecular abundance.">
+  <meta name="author" content="Akiko Yoshida">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="From Abundance to Architecture: Three Companies Mapping Biology Across Scales">
+  <meta property="og:description" content="How three life science companies are adding spatial context to biological measurement.">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5d6778;
+      --accent: #1265d6;
+      --accent-soft: #eaf3ff;
+      --line: #dfe5ec;
+      --surface: #f7f9fc;
+      --white: #ffffff;
+      --max-width: 780px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), 1080px);
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .back-link { font-size: 14px; text-decoration: none; }
+
+    main {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 76px 0 88px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(38px, 7vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .dek {
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.55;
+    }
+
+    .meta {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-body { margin-top: 62px; }
+    .article-body > p:first-child { font-size: 20px; }
+
+    h2 {
+      margin: 64px 0 20px;
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 34px 0 12px;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    p { margin: 0 0 22px; }
+
+    .key-point {
+      margin: 34px 0;
+      padding: 24px 26px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      background: var(--accent-soft);
+      font-size: 19px;
+    }
+
+    .company {
+      margin-top: 52px;
+      padding-top: 8px;
+    }
+
+    .company-label {
+      display: inline-block;
+      margin-bottom: 13px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    ul { margin: 0 0 25px; padding-left: 24px; }
+    li { margin-bottom: 10px; }
+
+    .summary-list {
+      padding: 24px 28px 18px 48px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .sources {
+      margin-top: 66px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sources h2 { margin-top: 0; font-size: 24px; }
+    .sources li { font-size: 15px; }
+
+    .disclaimer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 40px), 1080px);
+      margin: 0 auto;
+      padding: 28px 0 38px;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .header-inner { width: min(calc(100% - 28px), 1080px); }
+      main { width: min(calc(100% - 28px), var(--max-width)); padding-top: 50px; }
+      .dek { font-size: 18px; }
+      .article-body { margin-top: 45px; }
+      h2 { margin-top: 52px; }
+      .key-point { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">Akiko Yoshida</a>
+      <a class="back-link" href="./">All insights</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <p class="eyebrow">Spatial Biology · Technology Watch</p>
+        <h1>From “How Much?” to “Where and Near What?”</h1>
+        <p class="dek">Three companies mapping biology across different scales—and why spatial context matters for understanding potential molecular and cellular networks.</p>
+        <p class="meta"><time datetime="2026-09-06">September 6, 2026</time> · By Akiko Yoshida</p>
+      </header>
+
+      <div class="article-body">
+        <p>Biological research has traditionally focused on measuring which genes, transcripts, proteins, and cells are present, and at what levels.</p>
+
+        <p>However, understanding biological function also requires information about where molecules and cells are located, what they are close to, and how they are organized. Spatial location and proximity can help researchers infer potential molecular and cellular networks and develop hypotheses about biological function.</p>
+
+        <aside class="key-point"><strong>Proximity alone does not prove direct interaction or causality.</strong> Two components found close together may interact directly, belong to a larger shared system, or simply occupy the same environment.</aside>
+
+        <p>From this perspective—adding spatial context to measurements of abundance—I looked at three companies: Bioptimus, Pixelgen Technologies, and Quanterix. Each approaches biological organization and relationships with a different technology and at a different scale.</p>
+
+        <section class="company">
+          <span class="company-label">Multimodal AI</span>
+          <h2>1. Bioptimus: Connecting Pathology Images and Molecular Information</h2>
+
+          <p>Bioptimus develops foundation models that learn across multiple biological modalities and scales.</p>
+
+          <p>M-Optimus-1, announced by the company in May 2026, is a multimodal foundation model that learns relationships among H&amp;E pathology images, bulk RNA sequencing, and spatial transcriptomics.</p>
+
+          <p>These data types show different aspects of tissue. H&amp;E images show tissue morphology and architecture. Bulk RNA sequencing measures overall gene expression in a sample, while spatial transcriptomics shows the spatial distribution of gene expression within tissue.</p>
+
+          <p>According to Bioptimus, M-Optimus-1 is designed to predict spatial gene expression patterns from routine H&amp;E pathology images. The company says that the model can make predictions from H&amp;E images alone and can use bulk RNA-seq data as additional input when available.</p>
+
+          <p>Bioptimus lists drug target and biomarker discovery, indication expansion, diagnostics and spatial biology, treatment-response prediction, and clinical-trial design among its intended applications. The company also proposes using existing pathology slides, sequencing data, and clinical records.</p>
+
+          <p>M-Optimus-1 can therefore be described as an approach that learns relationships between tissue morphology and molecular activity to infer spatial gene expression patterns from pathology images. However, its performance and applicability need to be considered in relation to the tissue, disease, available data, and evaluation method involved.</p>
+        </section>
+
+        <section class="company">
+          <span class="company-label">Single-cell protein organization</span>
+          <h2>2. Pixelgen Technologies: Analyzing Protein Organization on Single Cells</h2>
+
+          <p>Pixelgen Technologies develops technology for analyzing the spatial organization of proteins on the surface of single cells.</p>
+
+          <p>Its Proximity Network Assay is designed for high-dimensional analysis of single-cell surface architecture. According to Pixelgen, the assay examines how proteins are spatially organized and form clusters and networks across the cell membrane.</p>
+
+          <p>The Proxiome Kit v2, announced by the company in June 2026, uses the Proximity Network Assay to analyze protein abundance, clustering, and colocalization on the surface of individual immune cells at nanoscale resolution. Pixelgen says that the analysis can be customized by combining the product with its Custom Conjugation Kit.</p>
+
+          <p>The key feature of this approach is that it examines not only protein expression levels but also how proteins are organized on the cell surface. It may therefore allow researchers to compare differences in clustering and colocalization among cells with similar levels of protein expression.</p>
+
+          <p>However, proximity or colocalization detected by the Proximity Network Assay does not, by itself, prove direct binding or functional interaction between proteins. Proteins found close together may bind directly, but they may also belong to the same complex or membrane region through other molecules.</p>
+
+          <p>The spatial information generated by the assay should therefore be viewed as a way to explore potential protein networks and differences in cell states, and to identify relationships for further functional validation.</p>
+
+          <p>Pixelgen presents potential applications in disease-mechanism research, biomarker discovery, and next-generation therapeutic development, as well as translational research in immunology, hematology, and cell therapy.</p>
+        </section>
+
+        <section class="company">
+          <span class="company-label">Blood and tissue biomarkers</span>
+          <h2>3. Quanterix: Following Biomarkers Across Blood, CSF, and Tissue</h2>
+
+          <p>Quanterix provides Simoa solutions for measuring biomarkers in liquid samples and spatial biology solutions for tissue analysis.</p>
+
+          <p>Its Simoa portfolio includes instruments, assay kits, and reagents. Its spatial biology portfolio includes instruments, assays, reagents, and image and data analysis software for tissue analysis.</p>
+
+          <p>Quanterix describes these two modalities as providing biomarker insights across blood, cerebrospinal fluid, and tissue.</p>
+
+          <p>According to the company, liquid assays detect systemic signals, while spatial tissue analysis maps those signals to their biological origin. Quanterix also highlights the ability to follow the same biomarker across different sample matrices as a feature of this approach.</p>
+
+          <p>The company lists neurology, oncology, immunology and inflammation, cardiology, and infectious disease among its therapeutic areas. It aims to support the development of biomarkers from research and clinical trials to diagnostics.</p>
+        </section>
+
+        <section>
+          <h2>Adding Spatial Context to Abundance</h2>
+
+          <p>These three companies are not developing the same type of technology.</p>
+
+          <ul class="summary-list">
+            <li><strong>Bioptimus</strong> uses multimodal AI to learn relationships between pathology images and molecular data and to predict spatial gene expression patterns.</li>
+            <li><strong>Pixelgen Technologies</strong> analyzes protein abundance, clustering, and colocalization on the surface of individual immune cells.</li>
+            <li><strong>Quanterix</strong> provides liquid assays for blood and cerebrospinal fluid alongside spatial analysis of tissue.</li>
+          </ul>
+
+          <p>Although they work with different data types and biological scales, their technologies reflect a shared direction: moving beyond molecular abundance alone to examine spatial location, organization, proximity, and biological context.</p>
+
+          <p>Spatial information can help researchers develop hypotheses about potential molecular and cellular networks. At the same time, spatial proximity alone cannot establish direct interaction or causality. Spatial analysis can identify candidate relationships, which then need to be examined through further experiments and clinical research.</p>
+
+          <p>Biological measurement may not be shifting from abundance to space. Instead, it may be moving toward adding spatial context and relationships to measurements of abundance.</p>
+        </section>
+
+        <section class="sources">
+          <h2>Company Sources</h2>
+          <ul>
+            <li><a href="https://www.bioptimus.com/" target="_blank" rel="noopener noreferrer">Bioptimus</a></li>
+            <li><a href="https://www.bioptimus.com/introducing-m-optimus" target="_blank" rel="noopener noreferrer">M-Optimus-1</a></li>
+            <li><a href="https://www.pixelgen.com/" target="_blank" rel="noopener noreferrer">Pixelgen Technologies</a></li>
+            <li><a href="https://www.quanterix.com/" target="_blank" rel="noopener noreferrer">Quanterix</a></li>
+          </ul>
+
+          <p class="disclaimer">The company and product information in this article is based on information published on each company’s official website. Descriptions of performance and intended applications include claims made by the companies and are not presented as an independent technical evaluation.</p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">© 2026 Akiko Yoshida</div>
+  </footer>
+</body>
+</html>
