@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3TEHHB7B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L3TEHHB7B7');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Japanese Life Science Startups at Berkeley SkyDeck | Akiko Yoshida</title>
+  <meta name="description" content="Explore Japanese life science startups connected to Berkeley SkyDeck—from Genomelink and ThinkCyte in the Accelerator Cohort to six IPP examples—and learn how this ecosystem may matter to U.S. biotech teams evaluating Japan.">
+  <link rel="canonical" href="https://mashuri-tokyo.github.io/akiko-portfolio/insights/japanese-life-science-startups-berkeley-skydeck.html">
+
+  <meta property="og:title" content="Japanese Life Science Startups at Berkeley SkyDeck">
+  <meta property="og:description" content="Explore Japanese life science startups connected to Berkeley SkyDeck, and learn how the Accelerator Cohort and IPP differ.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mashuri-tokyo.github.io/akiko-portfolio/insights/japanese-life-science-startups-berkeley-skydeck.html">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #fdfbf3;
+      --card: #f7f1de;
+      --ink: #3a3527;
+      --muted: #9a927a;
+      --sage: #7fa06a;
+      --plum: #b25a72;
+      --line: #e6ddc0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 36px;
+    }
+
+    nav {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 21px;
+      color: var(--plum);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--plum); }
+
+    .article {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 90px 0 120px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 11px;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: 1.03;
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      color: var(--plum);
+      font-weight: 400;
+    }
+
+    .intro {
+      font-size: 19px;
+      color: #746e5d;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .meta {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+      margin-bottom: 64px;
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      font-size: 17px;
+    }
+
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-top: 70px;
+      margin-bottom: 18px;
+    }
+
+    .article-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    a {
+      color: var(--plum);
+      text-underline-offset: 3px;
+    }
+
+    .route-table-wrap,
+    .table-wrap {
+      overflow-x: auto;
+      margin: 30px 0 24px;
+    }
+
+    .route-table,
+    .startup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .route-table th,
+    .route-table td,
+    .startup-table th,
+    .startup-table td {
+      padding: 15px 16px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--line);
+    }
+
+    .route-table th,
+    .startup-table th {
+      background: var(--card);
+      color: var(--plum);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .startup-table td:first-child {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .overview-note {
+      color: var(--muted);
+      font-size: 15px !important;
+    }
+
+    .specimen-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 3px 9px;
+      margin: 42px 0 12px;
+    }
+
+    .subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .score-card {
+      background: var(--card);
+      padding: 24px 28px;
+      margin: 26px 0;
+      border: 1px solid var(--line);
+    }
+
+    .score-card p {
+      font-size: 14px !important;
+      margin-bottom: 6px !important;
+    }
+
+    .highlight {
+      background: var(--card);
+      border-left: 3px solid var(--sage);
+      padding: 26px 30px;
+      margin: 38px 0;
+    }
+
+    .fieldnote {
+      margin: 60px 0 40px;
+      padding: 40px 44px;
+      background: var(--card);
+      border-left: 3px solid var(--plum);
+    }
+
+    .fieldnote .eyebrow {
+      color: var(--plum);
+      margin-bottom: 18px;
+    }
+
+    .fieldnote h2 { margin-top: 0; }
+
+    .fieldnote .close-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      color: var(--plum);
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta {
+      margin-top: 90px;
+      padding: 48px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .cta h2 {
+      margin-top: 0;
+      font-size: 40px;
+    }
+
+    .cta-path {
+      color: var(--muted);
+      margin: 24px 0;
+      font-size: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border: 1px solid var(--plum);
+      color: var(--plum);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: var(--plum);
+      color: var(--paper);
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .container { padding: 0 22px; }
+      .article { padding: 60px 0 80px; }
+      h1 { font-size: 46px; }
+      .article-body h2 { font-size: 32px; }
+      .cta { padding: 30px 24px; }
+      .fieldnote { padding: 30px 24px; }
+      .route-table,
+      .startup-table { min-width: 620px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="nav-name" href="../index.html">Akiko Yoshida</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#sample-work">Sample Work</a></li>
+        <li><a href="../index.html#current-work">Current Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#writing">Writing</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="article">
+      <header>
+        <p class="eyebrow">Japan Biotech &middot; Berkeley SkyDeck</p>
+        <h1>Japanese Life Science Startups<br><em>at Berkeley SkyDeck</em></h1>
+        <p class="intro">
+          Two different pathways—Accelerator Cohort and IPP—have connected Japanese
+          founders with Berkeley’s startup ecosystem.
+        </p>
+        <p class="meta">Akiko Yoshida, MSc &middot; Published September 27, 2026</p>
+      </header>
+
+      <article class="article-body">
+        <p>
+          Japan and the United States have long-standing ties in biotechnology and life
+          sciences. One place where those connections become visible is Berkeley SkyDeck,
+          UC Berkeley’s startup accelerator. <a href="https://www.jetro.go.jp/news/releases/2023/4f7f58fd2968d824.html" target="_blank" rel="noopener">Since fiscal year 2021, JETRO has worked with SkyDeck</a>
+          through programs supporting Japanese startups’ international expansion.
+        </p>
+
+        <p>
+          I first became interested in the Japanese companies taking part in these
+          programs because I had worked at Genomelink, which once had an office at SkyDeck.
+          At the time, I was focused on finding genetic traits that could make genomics
+          engaging for consumers: reviewing research, checking the strength of the
+          evidence, and following new developments in genomics. I traveled between Tokyo
+          and Berkeley, and that period remains meaningful to me.
+        </p>
+
+        <p>
+          Looking into SkyDeck again, I found that “participating in SkyDeck” can describe
+          different routes. The <strong>Accelerator Cohort</strong> is SkyDeck’s core
+          accelerator, with investment from the Berkeley SkyDeck Fund for selected teams.
+          The <strong>Innovation Partners Program (IPP)</strong> brings startups to
+          SkyDeck through partner organizations. The programs offer different structures,
+          so I’ve kept the participation categories separate below.
+        </p>
+
+        <section class="route-table-wrap" aria-label="SkyDeck program comparison">
+          <table class="route-table">
+            <thead>
+              <tr>
+                <th>Program</th>
+                <th>How startups participate</th>
+                <th>What the program offers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Accelerator Cohort</strong></td>
+                <td>Startups selected into SkyDeck’s core accelerator</td>
+                <td>SkyDeck Fund investment for selected teams, mentorship, and accelerator programming</td>
+              </tr>
+              <tr>
+                <td><strong>IPP</strong></td>
+                <td>Startups participate through partner organizations</td>
+                <td>Workshops, advisor office hours, networking, and a showcase</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <h2>Accelerator Cohort: Genomelink and ThinkCyte</h2>
+
+        <span class="specimen-tag">Cohort · Batch 6</span>
+        <h3>Genomelink</h3>
+        <p class="subhead">A consumer-facing “DNA App Store”</p>
+        <div class="score-card">
+          <p><strong>Program</strong> &mdash; <a href="https://skydeck.berkeley.edu/portfolio/" target="_blank" rel="noopener">Berkeley SkyDeck Accelerator Cohort, Batch 6</a></p>
+          <p><strong>Focus</strong> &mdash; Consumer genomics, genetic traits, DNA data</p>
+          <p><strong>Founder interview</strong> &mdash; <a href="https://medium.com/@berkeleyskydeck_15634/against-the-odds-how-one-japanese-startup-got-its-start-in-the-u-s-market-db85c04c9705" target="_blank" rel="noopener">SkyDeck interview with Tomohiro “Tomo” Takano</a></p>
+        </div>
+
+        <p>
+          Genomelink envisioned a “DNA App Store” where people could upload their genetic
+          data and access a range of analyses and apps. Berkeley SkyDeck’s
+          <a href="https://skydeck.berkeley.edu/portfolio/" target="_blank" rel="noopener">company portfolio</a>
+          lists Genomelink as Batch 6.
+        </p>
+
+        <p>
+          In a <a href="https://medium.com/@berkeleyskydeck_15634/against-the-odds-how-one-japanese-startup-got-its-start-in-the-u-s-market-db85c04c9705" target="_blank" rel="noopener">SkyDeck interview</a>,
+          co-founder Tomohiro “Tomo” Takano described how uncertain the company’s early
+          U.S. journey was. The team had struggled to gain traction with its first product,
+          had limited funds, and was considering returning to Japan when SkyDeck’s
+          acceptance came through.
+        </p>
+
+        <p>
+          Takano said the company began its Series A fundraising process around SkyDeck’s
+          alumni Demo Day, where it built connections with investors. Genomelink later
+          joined Y Combinator, used YC’s Demo Day to continue building investor
+          relationships, and ultimately raised a $10 million Series A.
+        </p>
+
+        <p>
+          I remember the work happening alongside those milestones: searching for traits
+          people might find surprising, checking what the research actually supported,
+          and thinking about how to turn genomics into a useful consumer experience.
+        </p>
+
+        <span class="specimen-tag">Cohort · Batch 7</span>
+        <h3>ThinkCyte</h3>
+        <p class="subhead">AI-powered, label-free cell analysis and sorting</p>
+        <div class="score-card">
+          <p><strong>Program</strong> &mdash; <a href="https://skydeck.berkeley.edu/portfolio/" target="_blank" rel="noopener">Berkeley SkyDeck Accelerator Cohort, Batch 7</a></p>
+          <p><strong>Focus</strong> &mdash; Ghost Cytometry, cell morphology, AI-enabled sorting</p>
+          <p><strong>Program history</strong> &mdash; <a href="https://thinkcyte.com/newsroom/20181220-en/" target="_blank" rel="noopener">ThinkCyte’s graduation announcement</a></p>
+        </div>
+
+        <p>
+          ThinkCyte’s Ghost Cytometry technology captures cell morphology as waveform data
+          when cells pass through structured illumination, then uses AI to classify and
+          sort cells. The company completed SkyDeck’s Cohort Program in 2018.
+        </p>
+
+        <p>
+          In its <a href="https://thinkcyte.com/newsroom/20181220-en/" target="_blank" rel="noopener">announcement</a>,
+          ThinkCyte described a six-month program that included a $100,000 investment and
+          mentoring on product strategy, fundraising plans, and team building. SkyDeck’s
+          <a href="https://skydeck.berkeley.edu/portfolio/" target="_blank" rel="noopener">portfolio</a>
+          lists ThinkCyte as Batch 7.
+        </p>
+
+        <div class="highlight">
+          Genomelink brought a consumer genomics concept to the program; ThinkCyte brought
+          a new approach to cell analysis and sorting. Their technologies and customers
+          differ, but both show Japanese-founded teams building companies across the
+          U.S.–Japan boundary.
+        </div>
+
+        <h2>Japanese life science companies in SkyDeck’s IPP</h2>
+
+        <p>
+          SkyDeck’s <a href="https://skydeck.berkeley.edu/ipp-overview/" target="_blank" rel="noopener">Innovation Partners Program</a>
+          works with partner organizations that send startups to SkyDeck. Participants
+          can access workshops, advisor office hours, networking, and a showcase. In
+          Japan, examples of partner routes include JETRO and university-affiliated
+          venture organizations.
+        </p>
+
+        <p>
+          The following are Japanese life science and medtech companies whose IPP
+          participation I could confirm in public sources:
+        </p>
+
+        <div class="table-wrap">
+          <table class="startup-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Area</th>
+                <th>Confirmed participation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://gellycle.com/" target="_blank" rel="noopener">Gellycle</a></td>
+                <td>Hydrogel biomaterials with a uniform network structure</td>
+                <td><a href="https://www.linkedin.com/posts/skydeck-berkeley_innovation-startup-medicine-activity-7206324301199847425-pVmw" target="_blank" rel="noopener">Batch 17 IPP</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://www.jimed.jp/" target="_blank" rel="noopener">JiMED</a></td>
+                <td>Brain-computer interfaces (BCI)</td>
+                <td><a href="https://jp.linkedin.com/in/jin-nakamura-ab0951166" target="_blank" rel="noopener">Batch 17 IPP</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://mirnda.biz/" target="_blank" rel="noopener">MiRNDa</a></td>
+                <td>Developing RNA-modification analysis, including miRNA methylation, for early cancer detection</td>
+                <td><a href="https://jp.linkedin.com/company/mirnda-company-profile" target="_blank" rel="noopener">Batch 21 IPP</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://atransen.com/" target="_blank" rel="noopener">Atransen Pharma</a></td>
+                <td>Oncology drug development</td>
+                <td><a href="https://atransen.com/news/atransen-pharma-selected-for-uc-berkeleys-startup-acceleration-program-berkeley-skydeck-program-batch-19-ipp/" target="_blank" rel="noopener">Batch 19 IPP</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://www.linkedin.com/company/chiral-inc/" target="_blank" rel="noopener">Chiral</a></td>
+                <td>Computational drug discovery platform</td>
+                <td><a href="https://www.linkedin.com/posts/rongjun-gao-910859237_berkeleyskydeck-jetro-drugdiscovery-activity-7429086748762103808-GJFw" target="_blank" rel="noopener">Batch 21 IPP</a></td>
+              </tr>
+              <tr>
+                <td><a href="https://www.linkedin.com/in/hirozumi-sasakura-475597238/en/" target="_blank" rel="noopener">VentEase</a></td>
+                <td>Catheter-based phrenic nerve stimulation designed to support earlier weaning from mechanical ventilation</td>
+                <td><a href="https://luma.com/B21IPPShowcase" target="_blank" rel="noopener">Batch 21 IPP Showcase</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="overview-note">
+          This is not a complete list of Japanese startups that have participated in IPP.
+          It does, however, show the range of technologies represented—from biomaterials
+          and brain-computer interfaces to RNA diagnostics, drug discovery, and
+          critical-care devices.
+        </p>
+
+        <div class="fieldnote">
+          <p class="eyebrow">Field Note</p>
+          <h2>Beyond the acceptance announcement</h2>
+
+          <p>
+            Joining an accelerator is one milestone in a company’s history. What I’m most
+            interested in is what happens next: whom the founders meet, which research or
+            business questions they work through, and how those conversations shape their
+            next steps.
+          </p>
+
+          <p>
+            Looking back into Genomelink’s SkyDeck years also brought back my own
+            experience: moving between Tokyo and Berkeley, reading papers for promising
+            science, and thinking about how to make it meaningful to users.
+          </p>
+
+          <p>
+            I’d like to keep following these companies beyond their program names—to
+            understand whose problems their technologies aim to solve, and how they build
+            the partnerships and evidence needed to reach those users.
+          </p>
+
+          <p class="close-line">
+            What problem can this technology actually solve—and for whom?
+          </p>
+        </div>
+
+        <section class="cta">
+          <h2>Assessing Japan for your life science company?</h2>
+          <p class="cta-path">
+            For U.S. life science companies assessing Japan, understanding the ecosystem
+            starts with more than a company list. It means learning which local needs a
+            technology could address, who might use it, and which research or commercial
+            partners could help evaluate the opportunity.
+          </p>
+          <p class="cta-path">
+            If you are deciding whether Japan fits your company’s current stage, start
+            with my <a href="https://mashuri-tokyo.github.io/akiko-portfolio/insights/japan-biotech-market-entry.html">10-point Japan market-entry readiness checklist</a>.
+            I also support overseas life science teams with Japan market research and
+            partner mapping.
+          </p>
+          <a class="button" href="../index.html#contact">Discuss Your Japan Entry</a>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Akiko Yoshida &middot; Japan Market Entry for Biotech &amp; Healthtech
+    </div>
+  </footer>
+</body>
+</html>
